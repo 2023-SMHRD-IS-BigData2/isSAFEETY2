@@ -216,5 +216,14 @@
    		
    		<!-- 폴리곤을 클릭했을때 동작할 행동을 넣어줌 -->
    		<script src="mapApi/AreaClick.js"></script>
+   		
+   		<!-- CCTV위치포인트표시 -->
+		<script src="CCTV.js"></script>
+		
+		<!-- 경찰서위치포인트표시 -->
+	 	<script src="PoliceOffice.js"></script>
+	 	
+	 	<!-- 안전벨위치포인트표시 -->
+		<script src="Bell.js"></script>
     </body>
 </html>
