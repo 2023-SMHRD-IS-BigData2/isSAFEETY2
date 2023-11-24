@@ -76,12 +76,14 @@
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
-                        <div class="row">
+                       <div class="row">
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Card Title</div>
+                                <div class="card bg-primary text-black2 mb-4">
+                                    <div class="card-body">안전시설 서비스</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <input id="text-balck" type="checkbox" name="service" value="center"> 치안센터
+                                        <input id="text-balck" type="checkbox" name="service" value="ccte"> CCTV
+                                        <input id="text-balck" type="checkbox" name="service" value="bell"> 비상벨
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
