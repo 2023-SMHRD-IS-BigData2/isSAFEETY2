@@ -317,12 +317,20 @@ button:focus:not(:focus-visible) {
 }
 
 #btnNavbarSearch {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
 	width:25px;
 	height:25px;
 }
 #search{
-	font-size: 15px;
-	margin-right: 50px;
+	font-size: 13px;
+}
+
+.nim{
+	color: white;
+	margin-top: 15px
 }
 
 input,

@@ -39,9 +39,18 @@
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
-                    
+                     <% if(LoginMember == null){ %>
+                    	
+                    		
+                    			
+                    <% } else {%>
+                    		
+                    		<p class="nim"><%= LoginMember.getName() %>님 안녕하세요~!</p>
+                    			
+                    <% } %>
                 </div>
             </form>
+
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
@@ -82,7 +91,7 @@
                                         <input id="text-balck" type="checkbox" name="service" value="center"> 치안센터
                                         <input id="text-balck" type="checkbox" name="service" value="ccte"> CCTV
                                         <input id="text-balck" type="checkbox" name="service" value="bell"> 비상벨
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        <div class="small text-white"></div>
                                     </div>
                                 </div>
                             </div>
@@ -133,7 +142,7 @@
                                     <div class="card-body">예측 결과</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        <div class="small text-white"></div>
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +151,7 @@
                                     <div class="card-body">Card Title</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        <div class="small text-white"></div>
                                     </div>
                                 </div>
                             </div>
