@@ -88,12 +88,45 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
+                           <div class="col-xl-3 col-md-6">
                                 <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Card Title</div>
+                                    <div class="card-body">안전 지수 예측</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    	위치 
+                                        <select name="location">
+                                        	<hr>
+                                        	<option value="seoul">서울시</option>
+                                        </select>
+                                        
+                                        <select name="location2">
+                                        	<hr>
+                                        	<option value="jongno-gu">종로구</option>
+                                        	<option value="jung-gu">중구</option>
+                                        	<option value="yongsan-gu">용산구</option>
+                                        	<option value="seongdong-gu">성동구</option>
+                                        	<option value="gwangjin-gu">광진구</option>
+                                        	<option value="dongdaemun-gu">동대문구</option>
+                                        	<option value="jungnang-gu">중랑구</option>
+                                        	<option value="seongbuk-gu">성북구</option>
+                                        	<option value="gangbuk-gu">강북구</option>
+                                        	<option value="dobong-gu">도봉구</option>
+                                        	<option value="nowon-gu">노원구</option>
+                                        	<option value="eunpyeong-gu">은평구</option>
+                                        	<option value="seodaemun-gu">서대문구</option>
+                                        	<option value="mapo-gu">마포구</option>
+                                        	<option value="yangcheon-gu">양천구</option>
+                                        	<option value="gangseo-gu">강서구</option>
+                                        	<option value="guro-gu">구로구</option>
+                                        	<option value="geumcheon-gu">금천구</option>
+                                        	<option value="yeongdeungpo-gu">영등포구</option>
+                                        	<option value="dongjak-gu">동작구</option>
+                                        	<option value="gwanak-gu">관악구</option>
+                                        	<option value="seocho-gu">서초구</option>
+                                        	<option value="gangnam-gu">강남구</option>
+                                        	<option value="songpa-gu">송파구</option>
+                                        	<option value="gangdong-gu">강동구</option>
+                                        </select>
+                                        <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                                     </div>
                                 </div>
                             </div>
