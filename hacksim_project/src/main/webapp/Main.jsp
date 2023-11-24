@@ -45,7 +45,7 @@
                     			
                     <% } else {%>
                     		
-                    		<p class="nim"><%= LoginMember.getName() %>님 안녕하세요~!</p>
+                    		<p class="nim"><span class="nameUnderline"><%= LoginMember.getName() %></span>님 안녕하세요~!</p>
                     			
                     <% } %>
                 </div>

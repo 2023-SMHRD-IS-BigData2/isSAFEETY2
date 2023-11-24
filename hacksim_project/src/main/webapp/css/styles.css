@@ -328,9 +328,13 @@ button:focus:not(:focus-visible) {
 	font-size: 13px;
 }
 
+.nameUnderline {
+	border-bottom: 1px solid #fff; 
+}
+
 .nim{
 	color: white;
-	margin-top: 15px
+	margin-top: 15px;
 }
 
 input,
