@@ -13,19 +13,17 @@ import lombok.ToString;
 @RequiredArgsConstructor
 public class Member {
 
-	@NonNull private String id;
-	@NonNull private String pw;
-	private String name;
-	private String email;
-	private String gender;
-	private int age;
-	
-	@NonNull
+   @NonNull private String id;
+   @NonNull private String pw;
+   private String name;
+   private String email;
+   private String gender;
+   private int age;
+   
+   @NonNull
     public Member(String name, String email, int num) {
         this.name = name;
         this.email = email;
     }
-	
+   
 }
-
-

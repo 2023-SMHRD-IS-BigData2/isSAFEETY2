@@ -24,13 +24,13 @@
     
     <%
     
-	    Member LoginMember = (Member)session.getAttribute("LoginMember");
-		
-		if(LoginMember != null){
-			
-		System.out.print(LoginMember.getId());
-		
-		}
+       Member LoginMember = (Member)session.getAttribute("LoginMember");
+      
+      if(LoginMember != null){
+         
+      System.out.print(LoginMember.getId());
+      
+      }
     
     %>
     
@@ -50,20 +50,20 @@
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     
-                    	<% if(LoginMember == null){ %>
-                    	
-                    			<li><a class="dropdown-item" href="Login.jsp">로그인</a></li>
-								<li><hr class="dropdown-divider" /></li>
-								<li><a class="dropdown-item" href="Join.jsp">회원가입</a></li>
-                    			
-                    	<% } else {%>
-                    		
-                    			<li><a class="dropdown-item" href="LogoutSer">로그아웃</a></li>
-                    			<li><hr class="dropdown-divider" /></li>
-                    			<li><a class="dropdown-item" href="DeleteMemSer?id=<%= LoginMember.getId() %>">회원탈퇴</a></li>
-                    			
-                    	<% } %>
-                    			
+                       <% if(LoginMember == null){ %>
+                       
+                             <li><a class="dropdown-item" href="Login.jsp">로그인</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="Join.jsp">회원가입</a></li>
+                             
+                       <% } else {%>
+                          
+                             <li><a class="dropdown-item" href="LogoutSer">로그아웃</a></li>
+                             <li><hr class="dropdown-divider" /></li>
+                             <li><a class="dropdown-item" href="DeleteMemSer?id=<%= LoginMember.getId() %>">회원탈퇴</a></li>
+                             
+                       <% } %>
+                             
                     </ul>
                 </li>
             </ul>
@@ -160,17 +160,17 @@
         
         <!-- 지도 시작위치, 시작줌레벨 -->
         <script type="text/javascript">
-      		var map = sop.map('map');
-     		 map.setView(sop.utmk(953427, 1950827), 5);
-   		</script>
-   		
-   		<!-- 좌표값으로 폴리곤을 생성 -->
-   		<script src="mapApi/SectionArea.js"></script>
-   		
-   		<!-- 생성된 폴리곤에 설정값을 넣어줌 -->
-   		<script src="mapApi/PolygonSetting.js"></script>
-   		
-   		<!-- 폴리곤을 클릭했을때 동작할 행동을 넣어줌 -->
-   		<script src="mapApi/AreaClick.js"></script>
+            var map = sop.map('map');
+            map.setView(sop.utmk(953427, 1950827), 5);
+         </script>
+         
+         <!-- 좌표값으로 폴리곤을 생성 -->
+         <script src="mapApi/SectionArea.js"></script>
+         
+         <!-- 생성된 폴리곤에 설정값을 넣어줌 -->
+         <script src="mapApi/PolygonSetting.js"></script>
+         
+         <!-- 폴리곤을 클릭했을때 동작할 행동을 넣어줌 -->
+         <script src="mapApi/AreaClick.js"></script>
     </body>
 </html>
