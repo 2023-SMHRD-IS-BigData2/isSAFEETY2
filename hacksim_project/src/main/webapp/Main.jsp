@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+    
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -12,6 +13,10 @@
         <title>Main - isSAFETY</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		
         
         <!-- jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -214,16 +219,20 @@
    		<!-- 생성된 폴리곤에 설정값을 넣어줌 -->
    		<script src="mapApi/PolygonSetting.js"></script>
    		
-   		<!-- 폴리곤을 클릭했을때 동작할 행동을 넣어줌 -->
+    	<!-- 폴리곤을 클릭했을때 동작할 행동을 넣어줌 -->
    		<script src="mapApi/AreaClick.js"></script>
    		
-   		<!-- CCTV위치포인트표시 -->
-		<script src="PinPoint/CCTV.js"></script>
+   		
+    	<!-- CCTV위치포인트표시 -->
+		<script src="mapApi/CCTV.js"></script>
 		
-		<!-- 경찰서위치포인트표시 -->
+ 		<!-- 경찰서위치포인트표시 -->
 	 	<script src="PinPoint/PoliceOffice.js"></script>
 	 	
-	 	<!-- 안전벨위치포인트표시 -->
+		<!-- 안전벨위치포인트표시 -->
 		<script src="PinPoint/Bell.js"></script>
+		
+	
+		
     </body>
 </html>
