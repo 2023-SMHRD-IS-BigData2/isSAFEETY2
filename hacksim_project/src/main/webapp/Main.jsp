@@ -93,10 +93,14 @@
                                 <div class="card bg-primary text-black2 mb-4">
                                     <div class="card-body">안전시설 서비스</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <input id="text-balck" type="checkbox" name="service" value="center"> 치안센터
-                                        <input id="text-balck" type="checkbox" name="service" value="ccte"> CCTV
-                                        <input id="text-balck" type="checkbox" name="service" value="bell"> 비상벨
-                                        <div class="small text-white"></div>
+                                        <!-- <input id="text-balck" class="service-checkbox" type="checkbox" name="service" value="center"> 치안센터
+                                        <input id="text-balck" class="service-checkbox" type="checkbox" name="service" value="cctv"> CCTV
+                                        <input id="text-balck" class="service-checkbox" type="checkbox" name="service" value="bell"> 비상벨 -->
+                                        <button id="cctv_click" onclick="center_view()">치안센터</button>
+                                        <button id="cctv_click" onclick="cctv_view()">CCTV</button>
+                                        <button id="cctv_click" onclick="bell_view()">비상벨</button>
+                                        <button id="cctv_click" onclick="remove_view()">지우기</button>
+                                        <div class="small text-white" id="result"></div>
                                     </div>
                                 </div>
                             </div>
@@ -206,8 +210,205 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="assets/demo/chart-area-demo.js"></script>
         <script src="assets/demo/chart-bar-demo.js"></script>
-        
-        <!-- 지도 시작위치, 시작줌레벨 -->
+
+		<script>
+			// jQuery 코드
+			/* $(document).ready(function() {
+				$(".service-checkbox").change(function() {
+					var resultDiv = $("#result");
+					var selectedServices = [1, 2, 3];
+	
+					$(".service-checkbox:checked").each(function() {
+						selectedServices.push($(this).val());
+					});
+	
+					if(selectedServices.includes(1)){
+						
+						resultDiv.show();
+						$.ajax({
+							url: "LoadPoliceData",
+							dataType: "json",
+							success: function(policeJson) {
+								//console.log(policeJson);
+								var arr_police = policeJson;
+								var myIcon = sop.icon({
+									iconUrl: './img/police_logo.png',
+									iconSize: [7, 7],
+									shadowSize: [7, 7],
+									iconAnchor: [0, 0],
+									shadowAnchor: [0, 0],
+									popupAnchor: [-3, -76]
+								});
+								for (var i = 0; i < arr_police.length; i++) {
+									var PoliceOffice_marker = sop.marker([arr_police[i][0], arr_police[i][1]], {
+										icon: myIcon
+									});
+									PoliceOffice_marker.addTo(map);
+								}
+							}
+						})
+					
+					}else if(selectedServices.includes(2)){
+						
+						resultDiv.show();
+						$.ajax({
+				            url: "LoadCCTVData",
+				            dataType: "json",
+				            success: function(cctvJson) {
+				               //console.log(cctvJson);
+				               var arr_cctv = cctvJson;
+				               var myIcon = sop.icon({
+				                  iconUrl: './img/cctv_logo.png',
+				                  iconSize: [5, 5],
+				                  shadowSize: [7, 7],
+				                  iconAnchor: [0, 0],
+				                  shadowAnchor: [0, 0],
+				                  popupAnchor: [-3, -76]
+				               });
+				               for (var i = 0; i < arr_cctv.length; i++) {
+				                  var CCTV_marker = sop.marker([arr_cctv[i][0], arr_cctv[i][1]], {
+				                     icon: myIcon
+				                  });
+				                  CCTV_marker.addTo(map);
+				               }
+				            }
+				         })
+						
+					}else if(selectedServices.includes(3)){
+						
+						resultDiv.show();
+						$.ajax({
+							url: "LoadBellData",
+							dataType: "json",
+							success: function(BellJson) {
+								//console.log(BellJson);
+								var arr_Bell = BellJson;
+								var myIcon = sop.icon({
+									iconUrl: './img/bell_logo.png',
+									iconSize: [7, 7],
+									shadowSize: [7, 7],
+									iconAnchor: [0, 0],
+									shadowAnchor: [0, 0],
+									popupAnchor: [-3, -76]
+								});
+								for (var i = 0; i < arr_Bell.length; i++) {
+									var Bell_marker = sop.marker([arr_Bell[i][0], arr_Bell[i][1]], {
+										icon: myIcon
+									});
+									Bell_marker.addTo(map);
+				               }
+				            }
+				         })
+					// if (selectedServices.length > 0) {
+						// resultDiv.html("선택된 서비스: " + selectedServices.join(", ") + selectedServices.length);
+						// resultDiv.show();
+						// loadScripts(selectedServices);
+					} else {
+						resultDiv.remove();
+					}
+				});
+			}); */
+		</script>
+		
+		<script>
+			function center_view() {
+				$.ajax({
+					url: "LoadPoliceData",
+					dataType: "json",
+					success: function(policeJson) {
+						//console.log(policeJson);
+						var arr_police = policeJson;
+						var myIcon = sop.icon({
+							iconUrl: './img/police_logo.png',
+							iconSize: [7, 7],
+							shadowSize: [7, 7],
+							iconAnchor: [0, 0],
+							shadowAnchor: [0, 0],
+							popupAnchor: [-3, -76]
+						});
+						for (var i = 0; i < arr_police.length; i++) {
+							var PoliceOffice_marker = sop.marker([arr_police[i][0], arr_police[i][1]], {
+								icon: myIcon
+							});
+							PoliceOffice_marker.addTo(map);
+						}
+					}
+				})
+			}
+		</script>
+   
+   		<script>
+      		function cctv_view() {
+      			$.ajax({
+		            url: "LoadCCTVData",
+		            dataType: "json",
+		            success: function(cctvJson) {
+		               //console.log(cctvJson);
+		               var arr_cctv = cctvJson;
+		               var myIcon = sop.icon({
+		                  iconUrl: './img/cctv_logo.png',
+		                  iconSize: [5, 5],
+		                  shadowSize: [7, 7],
+		                  iconAnchor: [0, 0],
+		                  shadowAnchor: [0, 0],
+		                  popupAnchor: [-3, -76]
+		               });
+		               for (var i = 0; i < arr_cctv.length; i++) {
+		                  var CCTV_marker = sop.marker([arr_cctv[i][0], arr_cctv[i][1]], {
+		                     icon: myIcon
+		                  });
+		                  CCTV_marker.addTo(map);
+		               }
+		            }
+		         })
+      		}
+   		</script>
+   		
+   		<script>
+	   		function bell_view() {
+	   			$.ajax({
+	   				url: "LoadBellData",
+	   				dataType: "json",
+	   				success: function(BellJson) {
+	   					//console.log(BellJson);
+	   					var arr_Bell = BellJson;
+	   					var myIcon = sop.icon({
+	   						iconUrl: './img/bell_logo.png',
+	   						iconSize: [7, 7],
+	   						shadowSize: [7, 7],
+	   						iconAnchor: [0, 0],
+	   						shadowAnchor: [0, 0],
+	   						popupAnchor: [-3, -76]
+	   					});
+	   					for (var i = 0; i < arr_Bell.length; i++) {
+	   						var Bell_marker = sop.marker([arr_Bell[i][0], arr_Bell[i][1]], {
+	   							icon: myIcon
+	   						});
+	   						Bell_marker.addTo(map);
+	   					}
+	   				}
+	   			})
+	   		}
+   		</script>
+   		
+   		<script>
+		    function remove_view() {
+		        // Assuming these variables are accessible globally or within the scope you want
+					if (PoliceOffice_marker) {
+					      PoliceOffice_marker.remove();  // Remove police marker
+			        }
+			
+			        if (CCTV_marker) {
+			            CCTV_marker.remove();  // Remove CCTV marker
+			        }
+			
+			        if (Bell_marker) {
+			            Bell_marker.remove();  // Remove bell marker
+			        }
+			    }
+		</script>
+
+		<!-- 지도 시작위치, 시작줌레벨 -->
         <script type="text/javascript">
       		var map = sop.map('map');
      		 map.setView(sop.utmk(953427, 1950827), 5);
@@ -224,15 +425,13 @@
    		
    		
     	<!-- CCTV위치포인트표시 -->
-		<script src="mapApi/CCTV.js"></script>
+		<!-- <script src="mapApi/CCTV.js"></script> -->
 		
  		<!-- 경찰서위치포인트표시 -->
-	 	<script src="PinPoint/PoliceOffice.js"></script>
+	 	<<!-- script src="mapApi/PoliceOffice.js"></script> -->
 	 	
 		<!-- 안전벨위치포인트표시 -->
-		<script src="PinPoint/Bell.js"></script>
-		
-	
+		<!-- <script src="mapApi/Bell.js"></script> -->
 		
     </body>
 </html>
