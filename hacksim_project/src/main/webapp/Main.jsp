@@ -434,7 +434,12 @@
     	<!-- 폴리곤을 클릭했을때 동작할 행동을 넣어줌 -->
    		<script src="mapApi/AreaClick.js"></script>
    		
-   		
+   		<!-- 행정구 대시보드 -->
+		<script src="dashboard/gu_dashboard.js"></script>
+			
+		<!-- 서울시 대시보드 -->
+        <script src="dashboard/seoul_dashboard.js"></script>
+        
     	<!-- CCTV위치포인트표시 -->
 		<!-- <script src="mapApi/CCTV.js"></script> -->
 		
@@ -443,12 +448,5 @@
 	 	
 		<!-- 안전벨위치포인트표시 -->
 		<!-- <script src="mapApi/Bell.js"></script> -->
-		
-		<!-- 행정구 대시보드 -->
-		<script src="assets/demo/gu_dashboard.js"></script>
-			
-		<!-- 서울시 대시보드 -->
-        <script src="assets/demo/seoul_dashboard.js"></script>
-		
     </body>
 </html>
