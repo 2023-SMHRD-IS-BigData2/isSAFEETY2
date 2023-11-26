@@ -185,7 +185,20 @@
                                         <i class="fas fa-chart-bar me-1"></i>
                                         전체 범죄율 변화
                                     </div>
-                                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                                    <div class="card-body">
+                                    	<!-- 5대 범죄 건수 -->
+										<span style="display: inline-block; width: 400px; height: 300px;"> 
+											<canvas id="myRadarChart"></canvas>
+										</span >
+										<!-- 서울시 범죄/검거율 -->
+										<span style="display: inline-block; width: 400px; height: 300px;"> 
+											<canvas id="doubleDoughnutChart"></canvas>
+										</span><br>
+										<!-- 년도 기준 전국 데이터 비교 -->
+										<span style="display: inline-block; width: 800px; height: 500px;">
+										  	<canvas id="myMixedChart"></canvas>
+										</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -430,6 +443,12 @@
 	 	
 		<!-- 안전벨위치포인트표시 -->
 		<!-- <script src="mapApi/Bell.js"></script> -->
+		
+		<!-- 행정구 대시보드 -->
+		<script src="assets/demo/gu_dashboard.js"></script>
+			
+		<!-- 서울시 대시보드 -->
+        <script src="assets/demo/seoul_dashboard.js"></script>
 		
     </body>
 </html>
