@@ -114,7 +114,7 @@ const ctx3 = document.getElementById('myMixedChart');
 
          $.ajax({
             type : "POST",
-            url : "http://127.0.0.1:5003/seoul_dashboard", // flask 주소
+            url : "http://119.200.31.33:5000/seoul_dashboard", // flask 주소
             /* data : {}, */
             processData : false,
             contentType : false,
