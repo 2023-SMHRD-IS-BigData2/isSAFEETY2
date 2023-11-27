@@ -26,6 +26,7 @@
     </head>
     <body class="sb-nav-fixed">
     
+    <!--  -->
     <%
     
 	    Member LoginMember = (Member)session.getAttribute("LoginMember");
@@ -219,7 +220,7 @@
                     </div>
                 </main>
                 
-                <!-- 맨 밑에 footer -->
+                <!-- footer -->
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">

@@ -14,9 +14,10 @@
     </head>
     <body class="bg-primary">
     
-    	<!-- 레이아웃 -->
+    	<!-- 회원가입 레이아웃 -->
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
+            
                 <main>
                     <div class="container">
                         <div class="row justify-content-center">
@@ -27,6 +28,8 @@
                                     
                                     	<!-- form 태그 -->
                                         <form action="JoinSer" method="post">
+                                        
+                                        	<!-- 아이디 입력 -->
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
@@ -37,7 +40,7 @@
                                                     </div>
                                                 </div>
                                              
-                                             	<!-- 이메일 -->
+                                             	<!-- 이메일 입력 -->
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <input class="form-control" id="inputEmail" name="email" type="email" placeholder="name@example.com" />
@@ -47,7 +50,7 @@
                                                 </div>
                                             </div>
                                             
-                                            <!-- 비밀번호 -->
+                                            <!-- 비밀번호 입력 -->
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
@@ -56,7 +59,7 @@
                                                     </div>
                                                 </div>
                                                 
-                                                <!-- 이름 -->
+                                                <!-- 이름 입력 -->
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <input class="form-control" id="inputName" name="name" type="text" placeholder="이름을 적어주세요." />
@@ -65,7 +68,7 @@
                                                 </div>
                                             </div>
                                             
-                                            <!-- 나이 -->
+                                            <!-- 나이 입력 -->
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
@@ -74,7 +77,7 @@
                                                     </div>
                                                 </div>
                                                 
-                                                <!-- 성별 -->
+                                                <!-- 성별 입력 -->
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
                                                         <label for="inputGender"></label>
@@ -88,16 +91,18 @@
                                                 </div>
                                             </div>
                                             
-                                            <!-- 버튼 -->
+                                            <!-- 버튼 입력 -->
                                             <div class="mt-4 mb-0">
                                                 <div class="d-grid">
                                                 <input type="submit" value="회원가입" class="btn btn-primary btn-block">
                                                 </div>
                                             </div>
                                         </form>
+                                        <!-- form 끝 -->
                                         
                                     </div>
                                     
+                                    <!-- 회원가입 있으면 로그인 -->
                                     <div class="card-footer text-center py-3">
                                         <div class="small"><a href="Login.jsp">회원가입이 되어있다면 로그인!</a></div>
                                     </div>
@@ -126,6 +131,7 @@
             </div>
         </div>
         
+        <!-- 스크립트 -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
 <!--         <script type="text/javascript">
