@@ -179,7 +179,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-6">
+                           <div class="col-xl-6">
                                 <div class="card mb-4">
                                     <div class="card-header">
                                         <i class="fas fa-chart-bar me-1"></i>
@@ -439,7 +439,6 @@
 			
 		<!-- 서울시 대시보드 -->
         <script src="dashboard/seoul_dashboard.js"></script>
-        
     	<!-- CCTV위치포인트표시 -->
 		<!-- <script src="mapApi/CCTV.js"></script> -->
 		
@@ -448,5 +447,6 @@
 	 	
 		<!-- 안전벨위치포인트표시 -->
 		<!-- <script src="mapApi/Bell.js"></script> -->
+		
     </body>
 </html>
