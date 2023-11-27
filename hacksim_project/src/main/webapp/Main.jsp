@@ -446,7 +446,7 @@
    		<script src="mapApi/PolygonSetting.js"></script>
    		
     	<!-- 폴리곤을 클릭했을때 동작할 행동을 넣어줌 -->
-   		<script src="mapApi/AreaClick.js"></script>
+   		<script src="AreaClick.js"></script>
    		
    		<!-- 행정구 대시보드 -->
 		<!-- <script src="dashboard/gu_dashboard.js"></script> -->
