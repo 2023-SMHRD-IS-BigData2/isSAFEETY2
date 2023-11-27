@@ -30,7 +30,7 @@ public class LoadBellData extends HttpServlet {
 		
 		String[] emergencyBell_temp;	// 비상벨의 좌표가 담겨있는 csv파일에서 한줄씩읽어올때 사용할 temp변수
 		// 일반2차원배열
-		Float[][] emergencyBell_coordinates = new Float[500][2]; 
+		Float[][] emergencyBell_coordinates = new Float[2216][2]; 
 		
 
 		

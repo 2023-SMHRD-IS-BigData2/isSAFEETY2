@@ -31,7 +31,7 @@ public class LoadCCTVData extends HttpServlet {
 		String[] cctv_temp;			// CCTV의 좌표가 담겨있는 csv파일에서 한줄씩읽어올때 사용할 temp변수
 		// 일반2차원배열
 		//Float[][] cctv_coordinates = new Float[83734][2];
-		Float[][] cctv_coordinates = new Float[100][2]; 	
+		Float[][] cctv_coordinates = new Float[2500][2]; 	
 		
 		try {
 			br = new BufferedReader(new InputStreamReader(new FileInputStream(cctv_path), "UTF-8"));
