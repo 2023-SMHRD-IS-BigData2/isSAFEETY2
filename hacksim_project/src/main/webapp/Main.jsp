@@ -175,7 +175,7 @@
                                         서울시 전체 지도
                                     </div>
                                     <div class="card-body">
-                                    <div id="map" style="width: 100%; height: 700px;"></div>
+                                    <div id="map" style="width: 100%; height: 812px;"></div>
                                     </div>
                                 </div>
                             </div>
