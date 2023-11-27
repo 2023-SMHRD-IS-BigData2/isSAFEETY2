@@ -188,7 +188,7 @@
                                         seoul map
                                     </div>
                                     <div class="card-body">
-                                    <div id="map" style="width: 100%; height: 812px;"></div>
+                                    <div id="map" style="width: 100%; height: 830px;"></div>
                                     </div>
                                 </div>
                             </div>
@@ -201,7 +201,7 @@
                                         seoul data dashboard
                                     </div>
                                     <div class="card-body">
-										<iframe id="chartFrame" style="width: 100%; height: 600px; border: none;"></iframe>
+										<iframe id="chartFrame" style="width: 100%; height: 830px; border: none;"></iframe>
                                     </div>
                                 </div>
                             </div>
