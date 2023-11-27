@@ -44,6 +44,8 @@
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
+                
+                <!-- 회원 이름 -->
                      <% if(LoginMember == null){ %>
                     	
                     		
@@ -56,7 +58,7 @@
                 </div>
             </form>
 
-            <!-- Navbar-->
+            <!-- 로그인/회원가입/로그아웃/회원탈퇴 -->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
@@ -80,6 +82,8 @@
                 </li>
             </ul>
         </nav>
+        
+        <!-- 맨 위에 header쪽 -->
         <div id="layoutSidenav">
             <div id="layoutSidenav_content">
                 <main>
@@ -88,6 +92,8 @@
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
+                        
+                        <!-- 치안센터/cctv/비상벨 버튼 -->
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-black2 mb-4">
@@ -104,6 +110,8 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                            <!-- 안전 지수 예측 -->
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-warning text-white mb-4">
                                     <div class="card-body">안전 지수 예측</div>
@@ -146,6 +154,8 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                            <!-- 예측 결과 -->
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">예측 결과</div>
@@ -155,6 +165,8 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                            <!--  -->
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
                                     <div class="card-body">Card Title</div>
@@ -166,24 +178,26 @@
                             </div>
                         </div>
                         
-                        <!-- 지도 -->
+                        <!-- 서울시 전체 지도 -->
                         <div class="row">
                             <div class="col-xl-6">
                                 <div class="card mb-4">
                                     <div class="card-header">
                                         <i class="fas fa-chart-area me-1"></i>
-                                        서울시 전체 지도
+                                        seoul map
                                     </div>
                                     <div class="card-body">
                                     <div id="map" style="width: 100%; height: 812px;"></div>
                                     </div>
                                 </div>
                             </div>
+                            
+                            <!-- 서울시 대시보드 -->
                            <div class="col-xl-6">
                                 <div class="card mb-4">
                                     <div class="card-header">
                                         <i class="fas fa-chart-bar me-1"></i>
-                                        전체 범죄율 변화
+                                        seoul data dashboard
                                     </div>
                                     <div class="card-body">
                                     	<!-- 5대 범죄 건수 -->
@@ -204,6 +218,8 @@
                         </div>
                     </div>
                 </main>
+                
+                <!-- 맨 밑에 footer -->
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
@@ -218,6 +234,8 @@
                 </footer>
             </div>
         </div>
+        
+        <!-- 스크립트 -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
@@ -322,6 +340,7 @@
 			}); */
 		</script>
 		
+		<!-- 버튼 기능 -->
 		<script>
 			function center_view() {
 				$.ajax({
@@ -403,6 +422,7 @@
 	   		}
    		</script>
    		
+   		<!-- 지우기 기능 -->
    		<script>
 		    function remove_view() {
 		        // Assuming these variables are accessible globally or within the scope you want
