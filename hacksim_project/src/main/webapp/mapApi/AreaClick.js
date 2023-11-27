@@ -771,7 +771,7 @@ polygon_25.on("click", function(e) {
 	map.setView(sop.utmk(961720, 1944158), 7);
 	//=========================================================================
 	var selectedLocation = "강남구";
-	loadChart("gu_dashboard_test.jsp?location=" + selectedLocation);
+	loadChart("../gu_dashboard_test.jsp?location=" + selectedLocation);
 	function loadChart(chartURL) {
 		document.getElementById("chartFrame").src = chartURL;
 	}
