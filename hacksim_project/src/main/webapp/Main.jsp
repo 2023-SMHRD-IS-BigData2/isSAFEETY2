@@ -201,18 +201,7 @@
                                         seoul data dashboard
                                     </div>
                                     <div class="card-body">
-                                    	<!-- 5대 범죄 건수 -->
-										<span style="display: inline-block; width: 400px; height: 300px;"> 
-											<canvas id="myRadarChart"></canvas>
-										</span >
-										<!-- 서울시 범죄/검거율 -->
-										<span style="display: inline-block; width: 400px; height: 300px;"> 
-											<canvas id="doubleDoughnutChart"></canvas>
-										</span><br>
-										<!-- 년도 기준 전국 데이터 비교 -->
-										<span style="display: inline-block; width: 800px; height: 500px;">
-										  	<canvas id="myMixedChart"></canvas>
-										</span>
+										<iframe id="chartFrame" style="width: 100%; height: 600px; border: none;"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -460,10 +449,10 @@
    		<script src="mapApi/AreaClick.js"></script>
    		
    		<!-- 행정구 대시보드 -->
-		<script src="dashboard/gu_dashboard.js"></script>
+		<!-- <script src="dashboard/gu_dashboard.js"></script> -->
 			
 		<!-- 서울시 대시보드 -->
-        <script src="dashboard/seoul_dashboard.js"></script>
+		<!-- <script src="dashboard/seoul_dashboard.js"></script> -->
     	<!-- CCTV위치포인트표시 -->
 		<!-- <script src="mapApi/CCTV.js"></script> -->
 		
@@ -472,6 +461,18 @@
 	 	
 		<!-- 안전벨위치포인트표시 -->
 		<!-- <script src="mapApi/Bell.js"></script> -->
+		
+		
+		<!-- iframe을 활용한 대시보드 -->
+		<script>
+		// 초기에는 첫 번째 차트만 보이도록 설정(서울시 전체)
+		loadChart("seoul_dashboard_test.jsp");
+		// 특정 차트를 로드하는 함수
+		function loadChart(chartURL) {
+			document.getElementById("chartFrame").src = chartURL;
+		}
+		</script>
+		
 		
     </body>
 </html>
