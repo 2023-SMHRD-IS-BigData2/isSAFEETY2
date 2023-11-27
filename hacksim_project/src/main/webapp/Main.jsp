@@ -106,7 +106,7 @@
                                         <button id="cctv_click" onclick="center_view()">치안센터</button>
                                         <button id="cctv_click" onclick="cctv_view()">CCTV</button>
                                         <button id="cctv_click" onclick="bell_view()">비상벨</button>
-                                        <button id="cctv_click" onclick="remove_view()">지우기</button>
+                                        <!-- <button id="cctv_click" onclick="remove_view()">지우기</button> -->
                                         <div class="small text-white" id="result"></div>
                                     </div>
                                 </div>
@@ -343,6 +343,10 @@
 		
 		<!-- 버튼 기능 -->
 		<script>
+		var PoliceOffice_marker;
+		var CCTV_marker;
+		var Bell_marker;
+		
 			function center_view() {
 				$.ajax({
 					url: "LoadPoliceData",
@@ -359,7 +363,7 @@
 							popupAnchor: [-3, -76]
 						});
 						for (var i = 0; i < arr_police.length; i++) {
-							var PoliceOffice_marker = sop.marker([arr_police[i][0], arr_police[i][1]], {
+							PoliceOffice_marker = sop.marker([arr_police[i][0], arr_police[i][1]], {
 								icon: myIcon
 							});
 							PoliceOffice_marker.addTo(map);
@@ -367,9 +371,7 @@
 					}
 				})
 			}
-		</script>
-   
-   		<script>
+
       		function cctv_view() {
       			$.ajax({
 		            url: "LoadCCTVData",
@@ -386,7 +388,7 @@
 		                  popupAnchor: [-3, -76]
 		               });
 		               for (var i = 0; i < arr_cctv.length; i++) {
-		                  var CCTV_marker = sop.marker([arr_cctv[i][0], arr_cctv[i][1]], {
+		                  CCTV_marker = sop.marker([arr_cctv[i][0], arr_cctv[i][1]], {
 		                     icon: myIcon
 		                  });
 		                  CCTV_marker.addTo(map);
@@ -394,9 +396,7 @@
 		            }
 		         })
       		}
-   		</script>
-   		
-   		<script>
+
 	   		function bell_view() {
 	   			$.ajax({
 	   				url: "LoadBellData",
@@ -413,7 +413,7 @@
 	   						popupAnchor: [-3, -76]
 	   					});
 	   					for (var i = 0; i < arr_Bell.length; i++) {
-	   						var Bell_marker = sop.marker([arr_Bell[i][0], arr_Bell[i][1]], {
+	   						Bell_marker = sop.marker([arr_Bell[i][0], arr_Bell[i][1]], {
 	   							icon: myIcon
 	   						});
 	   						Bell_marker.addTo(map);
@@ -421,24 +421,27 @@
 	   				}
 	   			})
 	   		}
-   		</script>
    		
    		<!-- 지우기 기능 -->
-   		<script>
-		    function remove_view() {
-		        // Assuming these variables are accessible globally or within the scope you want
-					if (PoliceOffice_marker) {
-					      PoliceOffice_marker.remove();  // Remove police marker
-			        }
-			
-			        if (CCTV_marker) {
-			            CCTV_marker.remove();  // Remove CCTV marker
-			        }
-			
-			        if (Bell_marker) {
-			            Bell_marker.remove();  // Remove bell marker
-			        }
-			    }
+   	/* 	function remove_view() {
+			console.log(PoliceOffice_marker);
+   			if (PoliceOffice_marker) {
+   		        
+   				for (var i = 0; i < PoliceOffice_marker.length; i++) {
+   					PoliceOffice_marker[i]
+				}
+   				PoliceOffice_marker.remove();
+   				// PoliceOffice_marker.remove();  // Remove police marker
+   		    }
+
+   		    if (CCTV_marker) {
+   		        CCTV_marker.remove();  // Remove CCTV marker
+   		    }
+
+   		    if (Bell_marker) {
+   		        Bell_marker.remove();  // Remove bell marker
+   		    }
+   		} */
 		</script>
 
 		<!-- 지도 시작위치, 시작줌레벨 -->
