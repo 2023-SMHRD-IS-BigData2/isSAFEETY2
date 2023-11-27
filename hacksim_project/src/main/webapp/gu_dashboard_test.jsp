@@ -22,6 +22,6 @@
   		<canvas id="myPopChart"></canvas>
 	</span>
 	
-	<script src="gu_dashboard.js?location=${param.location}"></script>
+	<script src="dashboard/gu_dashboard.js?location=${param.location}"></script>
 </body>
 </html>

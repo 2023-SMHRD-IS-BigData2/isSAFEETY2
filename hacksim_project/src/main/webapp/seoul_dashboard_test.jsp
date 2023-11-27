@@ -24,7 +24,7 @@
   		<canvas id="myMixedChart"></canvas>
 	</span>
 		
-	<script src="seoul_dashboard.js"></script>
+	<script src="dashboard/seoul_dashboard.js"></script>
 		
 </body>
 </html>
