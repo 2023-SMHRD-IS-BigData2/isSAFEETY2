@@ -23,6 +23,10 @@
         <!-- api연결 -->
         <script type="text/javascript" src="https://sgisapi.kostat.go.kr/OpenAPI3/auth/javascriptAuth?consumer_key=bd2d0b75d234444f8b15"></script>
         
+        <!-- 차트 라이브러리 -->
+      	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      	<script src="https://d3js.org/d3.v6.min.js"></script>
+        
     </head>
     <body class="sb-nav-fixed">
     
@@ -106,7 +110,7 @@
                                         <button id="cctv_click" onclick="center_view()">치안센터</button>
                                         <button id="cctv_click" onclick="cctv_view()">CCTV</button>
                                         <button id="cctv_click" onclick="bell_view()">비상벨</button>
-                                        <!-- <button id="cctv_click" onclick="remove_view()">지우기</button> -->
+                                        <a href="Main.jsp"><button id="cctv_click">지우기</button></a>
                                         <div class="small text-white" id="result"></div>
                                     </div>
                                 </div>
@@ -123,7 +127,7 @@
                                         	<option value="seoul">서울시</option>
                                         </select>
                                         
-                                        <select name="location2">
+                                        <select name="location2" id="locationSelect">
                                         	<hr>
                                         	<option value="종로구">종로구</option>
                                         	<option value="중구">중구</option>
@@ -157,22 +161,31 @@
                             </div>
                             
                             <!-- 예측 결과 -->
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">예측 결과</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"></div>
-                                    </div>
-                                </div>
+                            <div class="col-xl-3 col-md-6" style="display: flex;">
+                                <!-- <div class="card bg-success text-white mb-4"> -->
+                                    <!-- <div class="card-body">예측 결과</div> -->
+                                    <div style="width:30%;height:5%;background-color: 'skyblue';"><p>행정구<br>안전지수<br>예측</p></div>
+                                     <div style="width:30%;height:5%;">
+                                  <svg id="predictChart"></svg>
+                           </div>
+                           <div style="width:40%;height:5%;">
+                                  <svg id="barChart"></svg>
+                           </div>                                  
+                           
+                           <!-- <div class="card-footer d-flex align-items-center justify-content-between">
+                           <a class="small text-white stretched-link" href="#">View Details</a>
+                           <div class="small text-white"></div>
+                           </div> -->
+                           <!-- </div> -->
+                           
                             </div>
                             
-                            <!--  -->
+                            <!-- 안내사항 -->
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Card Title</div>
+                                    <div class="card-body">안내사항</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <p> 설치된 CCTV : 약 8만개  설치된 비상벨 : 약 2만개</p> 
                                         <div class="small text-white"></div>
                                     </div>
                                 </div>
@@ -213,7 +226,7 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">isSAFETY - 팀 발버둥(정윤오, 임다이, 이상훈, 안서혁)</div>      
+                            <div class="text-muted">isSAFETY - 팀 발버둥(정윤오, 임다이, 이상훈, 안서혁)</div>
                         </div>
                     </div>
                 </footer>
@@ -224,106 +237,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-		<script>
-			// jQuery 코드
-			/* $(document).ready(function() {
-				$(".service-checkbox").change(function() {
-					var resultDiv = $("#result");
-					var selectedServices = [1, 2, 3];
-	
-					$(".service-checkbox:checked").each(function() {
-						selectedServices.push($(this).val());
-					});
-	
-					if(selectedServices.includes(1)){
-						
-						resultDiv.show();
-						$.ajax({
-							url: "LoadPoliceData",
-							dataType: "json",
-							success: function(policeJson) {
-								//console.log(policeJson);
-								var arr_police = policeJson;
-								var myIcon = sop.icon({
-									iconUrl: './img/police_logo.png',
-									iconSize: [7, 7],
-									shadowSize: [7, 7],
-									iconAnchor: [0, 0],
-									shadowAnchor: [0, 0],
-									popupAnchor: [-3, -76]
-								});
-								for (var i = 0; i < arr_police.length; i++) {
-									var PoliceOffice_marker = sop.marker([arr_police[i][0], arr_police[i][1]], {
-										icon: myIcon
-									});
-									PoliceOffice_marker.addTo(map);
-								}
-							}
-						})
-					
-					}else if(selectedServices.includes(2)){
-						
-						resultDiv.show();
-						$.ajax({
-				            url: "LoadCCTVData",
-				            dataType: "json",
-				            success: function(cctvJson) {
-				               //console.log(cctvJson);
-				               var arr_cctv = cctvJson;
-				               var myIcon = sop.icon({
-				                  iconUrl: './img/cctv_logo.png',
-				                  iconSize: [5, 5],
-				                  shadowSize: [7, 7],
-				                  iconAnchor: [0, 0],
-				                  shadowAnchor: [0, 0],
-				                  popupAnchor: [-3, -76]
-				               });
-				               for (var i = 0; i < arr_cctv.length; i++) {
-				                  var CCTV_marker = sop.marker([arr_cctv[i][0], arr_cctv[i][1]], {
-				                     icon: myIcon
-				                  });
-				                  CCTV_marker.addTo(map);
-				               }
-				            }
-				         })
-						
-					}else if(selectedServices.includes(3)){
-						
-						resultDiv.show();
-						$.ajax({
-							url: "LoadBellData",
-							dataType: "json",
-							success: function(BellJson) {
-								//console.log(BellJson);
-								var arr_Bell = BellJson;
-								var myIcon = sop.icon({
-									iconUrl: './img/bell_logo.png',
-									iconSize: [7, 7],
-									shadowSize: [7, 7],
-									iconAnchor: [0, 0],
-									shadowAnchor: [0, 0],
-									popupAnchor: [-3, -76]
-								});
-								for (var i = 0; i < arr_Bell.length; i++) {
-									var Bell_marker = sop.marker([arr_Bell[i][0], arr_Bell[i][1]], {
-										icon: myIcon
-									});
-									Bell_marker.addTo(map);
-				               }
-				            }
-				         })
-					// if (selectedServices.length > 0) {
-						// resultDiv.html("선택된 서비스: " + selectedServices.join(", ") + selectedServices.length);
-						// resultDiv.show();
-						// loadScripts(selectedServices);
-					} else {
-						resultDiv.remove();
-					}
-				});
-			}); */
-		</script>
 		
 		<!-- 버튼 기능 -->
 		<script>
@@ -447,7 +360,7 @@
 		<!-- <script src="dashboard/gu_dashboard.js"></script> -->
 			
 		<!-- 서울시 대시보드 -->
-		<!-- <script src="dashboard/seoul_dashboard.js"></script> -->
+        <!-- <script src="dashboard/seoul_dashboard.js"></script> -->
     	<!-- CCTV위치포인트표시 -->
 		<!-- <script src="mapApi/CCTV.js"></script> -->
 		
@@ -456,7 +369,6 @@
 	 	
 		<!-- 안전벨위치포인트표시 -->
 		<!-- <script src="mapApi/Bell.js"></script> -->
-		
 		
 		<!-- iframe을 활용한 대시보드 -->
 		<script>
@@ -468,6 +380,17 @@
 		}
 		</script>
 		
+		<!-- 안전지수 예측 대시보드 -->
+      	<!-- predict_dashboard.js 파일을 먼저 로드한 후에 fetchDataAndDrawChart 함수를 호출 -->
+      	<script src="dashboard/predict_dashboard.js"></script>
+      	
+      	<script>
+       // 버튼 클릭 시 차트를 토글하도록 이벤트를 추가
+          document.getElementById("btnNavbarSearch").addEventListener("click", function () {
+              var selectedLocation = document.getElementById("locationSelect").value;
+              fetchDataAndDrawChart(selectedLocation);
+          });
+      </script>
 		
     </body>
 </html>

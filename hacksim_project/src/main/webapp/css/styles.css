@@ -7532,7 +7532,7 @@ textarea.form-control-lg {
 
 .bg-success {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
+  background-color: skyblue !important;
 }
 
 .bg-info {
@@ -7542,12 +7542,12 @@ textarea.form-control-lg {
 
 .bg-warning {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity)) !important;
+  background-color: lightgreen !important;
 }
 
 .bg-danger {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity)) !important;
+  background-color: lightpink !important;
 }
 
 .bg-light {
