@@ -6072,7 +6072,7 @@ textarea.form-control-lg {
 
 .text-bg-primary {
   color: #fff !important;
-  background-color: RGBA(13, 110, 253, var(--bs-bg-opacity, 1)) !important;
+  background-color: whitesmoke !important;
 }
 
 .text-bg-secondary {
@@ -6082,7 +6082,7 @@ textarea.form-control-lg {
 
 .text-bg-success {
   color: #fff !important;
-  background-color: RGBA(25, 135, 84, var(--bs-bg-opacity, 1)) !important;
+  background-color: skyblue !important;
 }
 
 .text-bg-info {
@@ -6092,12 +6092,12 @@ textarea.form-control-lg {
 
 .text-bg-warning {
   color: #000 !important;
-  background-color: RGBA(255, 193, 7, var(--bs-bg-opacity, 1)) !important;
+  background-color: lightgreen !important;
 }
 
 .text-bg-danger {
   color: #fff !important;
-  background-color: RGBA(220, 53, 69, var(--bs-bg-opacity, 1)) !important;
+  background-color: lightpink !important;
 }
 
 .text-bg-light {
@@ -7542,7 +7542,7 @@ textarea.form-control-lg {
 
 .bg-warning {
   --bs-bg-opacity: 1;
-  background-color: lightgreen !important;
+  background-color: #FFECB3 !important;
 }
 
 .bg-danger {

@@ -93,7 +93,7 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">isSAFETY</h1>
+                        <h1 class="mt-4" style="font-weight: bold;">isSAFETY</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
@@ -101,9 +101,9 @@
                         <!-- 치안센터/cctv/비상벨 버튼 -->
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-black2 mb-4">
+                                <div class="card bg-primary text-black2 mb-4" style="background-color: whitesmoke !important;">
                                     <div class="card-body">안전시설 서비스</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <div class="card-footer d-flex align-items-center justify-content-between" style="height: 80px;">
                                         <!-- <input id="text-balck" class="service-checkbox" type="checkbox" name="service" value="center"> 치안센터
                                         <input id="text-balck" class="service-checkbox" type="checkbox" name="service" value="cctv"> CCTV
                                         <input id="text-balck" class="service-checkbox" type="checkbox" name="service" value="bell"> 비상벨 -->
@@ -111,19 +111,18 @@
                                         <button id="cctv_click" onclick="cctv_view()">CCTV</button>
                                         <button id="cctv_click" onclick="bell_view()">비상벨</button>
                                         <a href="Main.jsp"><button id="cctv_click">지우기</button></a>
-                                        <div class="small text-white" id="result"></div>
+                                        <div class="small text-black2" id="result"></div>
                                     </div>
                                 </div>
                             </div>
                             
                             <!-- 안전 지수 예측 -->
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-warning text-white mb-4">
+                                <div class="card bg-warning text-black2 mb-4" style="background-color: #FFECB3 !important;">
                                     <div class="card-body">안전 지수 예측</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <div class="card-footer d-flex align-items-center justify-content-between" style="height: 80px;">
                                     	위치 
                                         <select name="location">
-                                        	<hr>
                                         	<option value="seoul">서울시</option>
                                         </select>
                                         
@@ -161,32 +160,24 @@
                             </div>
                             
                             <!-- 예측 결과 -->
-                            <div class="col-xl-3 col-md-6" style="display: flex;">
-                                <!-- <div class="card bg-success text-white mb-4"> -->
-                                    <!-- <div class="card-body">예측 결과</div> -->
-                                    <div style="width:30%;height:5%;background-color: 'skyblue';"><p>행정구<br>안전지수<br>예측</p></div>
-                                     <div style="width:30%;height:5%;">
-                                  <svg id="predictChart"></svg>
-                           </div>
-                           <div style="width:40%;height:5%;">
-                                  <svg id="barChart"></svg>
-                           </div>                                  
-                           
-                           <!-- <div class="card-footer d-flex align-items-center justify-content-between">
-                           <a class="small text-white stretched-link" href="#">View Details</a>
-                           <div class="small text-white"></div>
-                           </div> -->
-                           <!-- </div> -->
-                           
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-primary text-black2 mb-4" style="background-color: skyblue !important;">
+                                    <div class="card-body">행정구 안전지수 예측 결과</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between" style="height: 80px;">
+                                        <svg id="predictChart" style="margin-top: 40px; margin-left: 70px;"></svg>
+                                        <svg id="barChart" style="margin-top: 10px; margin-left: 30px;"></svg>
+                                    <div class="small text-black2"></div>
+                                    </div>
+                                </div>
                             </div>
                             
                             <!-- 안내사항 -->
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
+                                <div class="card bg-danger text-black2 mb-4" style="background-color: lightpink !important;">
                                     <div class="card-body">안내사항</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <p> 설치된 CCTV : 약 8만개  설치된 비상벨 : 약 2만개</p> 
-                                        <div class="small text-white"></div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between" style="height: 80px;">
+                                        <p style="margin-top: 15px;"> 설치된 CCTV : 약 8만개  설치된 비상벨 : 약 2만개</p> 
+                                        <div class="small text-black2"></div>
                                     </div>
                                 </div>
                             </div>
@@ -344,7 +335,7 @@
 		<!-- 지도 시작위치, 시작줌레벨 -->
         <script type="text/javascript">
       		var map = sop.map('map');
-     		 map.setView(sop.utmk(953427, 1950827), 5);
+     		 map.setView(sop.utmk(953427, 1950827), 6);
    		</script>
    		
    		<!-- 좌표값으로 폴리곤을 생성 -->
