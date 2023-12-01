@@ -21,7 +21,7 @@
 	<span style="display: inline-block; width: 800px; height: 500px;">
   		<canvas id="myPopChart"></canvas>
 	</span>
-	
+	<!-- 행정구 데이터를 파라미털로 받아오기  -->
 	<script src="dashboard/gu_dashboard.js?location=${param.location}"></script>
 </body>
 </html>

@@ -160,6 +160,7 @@
                                 <div class="card bg-primary text-black2 mb-4" style="background-color: skyblue !important;">
                                     <div class="card-body">행정구 안전지수 예측 결과</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between" style="height: 80px;">
+                                    <!-- d3.js 사용하여 예측 결과 값 차트로 출력 -->
                                         <svg id="predictChart" style="margin-top: 40px; margin-left: 70px;"></svg>
                                         <svg id="barChart" style="margin-top: 10px; margin-left: 30px;"></svg>
                                     <div class="small text-black2"></div>
@@ -324,10 +325,10 @@
     	<!-- 폴리곤을 클릭했을때 동작할 행동을 넣어줌 -->
    		<script src="AreaClick.js"></script>
    		
-		<!-- iframe을 활용한 대시보드 -->
+		<!-- iframe을 활용한 대시보드: 서울시 대시보드가 먼저 보이고 지도 상에 행정구 클릭 시 행정구 대시보드로 바뀌도록 설정-->
 		<script>
 		// 초기에는 첫 번째 차트만 보이도록 설정(서울시 전체)
-		loadChart("seoul_dashboard_test.jsp");
+		loadChart("seoul_dashboard.jsp");
 		// 특정 차트를 로드하는 함수
 		function loadChart(chartURL) {
 			document.getElementById("chartFrame").src = chartURL;
