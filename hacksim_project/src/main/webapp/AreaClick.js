@@ -1,10 +1,10 @@
 //==========================================================
-//폴리곤 생성
+// 폴리곤 클릭시 이벤트 추가
 
-polygon_01.on("click", function(e) {
+polygon_01.on("click", function(e) {		// polygon_01은 도봉구... 25번은 강남구에 해당함
 
-	var infoWindow = sop.infoWindow();
-	var contents = "";
+	var infoWindow = sop.infoWindow();		// 폴리곤클릭시 인포윈도우 출력
+	var contents = "";						// 인포윈도우 내용
 	contents += "<div style='font-family: dotum, arial, sans-serif;font-size: 15px; font-weight: bold;margin-bottom: 5px;'>도봉구</div>";
 	contents += "<table style='border-spacing:2px;border:0px;'>";
 	contents += "<tbody>";
@@ -18,15 +18,16 @@ polygon_01.on("click", function(e) {
 	contents += "</tr>";
 	contents += "</tbody>";
 	contents += "</table>";
-	infoWindow.setUTMK([958941, 1963204]);
+	infoWindow.setUTMK([958941, 1963204]);	// UTM-K좌표값
 	infoWindow.setContent(contents);
-	infoWindow.openOn(map);
+	infoWindow.openOn(map);					// 지도에 추가
 
-	map.setView(sop.utmk(958941, 1963204), 7);
+	map.setView(sop.utmk(958941, 1963204), 7);	// 중앙화면 좌표, 줌레벨
 	//=========================================================================
-	var selectedLocation = "도봉구";
-	loadChart("gu_dashboard_test.jsp?location=" + selectedLocation);
-	function loadChart(chartURL) {
+	// 이 부분은 SGIS 맵API의 폴리곤 클릭시 Chart.js가 실행되게끔 넣어두었음
+	var selectedLocation = "도봉구";									// 해당하는 구역이름을 세팅
+	loadChart("gu_dashboard_test.jsp?location=" + selectedLocation);// 세팅한 구역이름을 바탕으로 로드해온다
+	function loadChart(chartURL) {									// chart.js실행
 		document.getElementById("chartFrame").src = chartURL;
 	}
 	//=========================================================================
