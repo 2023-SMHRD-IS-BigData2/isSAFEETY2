@@ -1,9 +1,10 @@
+// 안전벨 위치 마커생성코드 (자세한 코드설명은 PoliceOffice.js참조)
+
 //function police_view() {
 	$.ajax({
 		url: "LoadBellData",
 		dataType: "json",
 		success: function(BellJson) {
-			//console.log(BellJson);
 			var arr_Bell = BellJson;
 			var myIcon = sop.icon({
 				iconUrl: './img/bell_logo.png',

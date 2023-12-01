@@ -1,9 +1,10 @@
+// CCTV 위치 마커생성코드 (자세한 코드설명은 PoliceOffice.js참조)
+
 //function cctv_view() {
 	$.ajax({
 		url: "LoadCCTVData",
 		dataType: "json",
 		success: function(cctvJson) {
-			//console.log(cctvJson);
 			var arr_cctv = cctvJson;
 			var myIcon = sop.icon({
 				iconUrl: './img/cctv_logo.png',
