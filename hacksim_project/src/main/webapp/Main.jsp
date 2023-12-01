@@ -13,11 +13,9 @@
         <title>Main - isSAFETY</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        
-        
+
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-		
-        
+
         <!-- jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <!-- api연결 -->
@@ -30,7 +28,7 @@
     </head>
     <body class="sb-nav-fixed">
     
-    <!--  -->
+    <!-- LoginMember의 아이디 가져오기 -->
     <%
     
 	    Member LoginMember = (Member)session.getAttribute("LoginMember");
@@ -44,13 +42,13 @@
     %>
     
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <!-- Navbar Brand-->
+            <!-- Navbar Bar -->
             <a class="navbar-brand ps-3" href="Main.jsp">isSAFETY</a>
-            <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
                 
                 <!-- 회원 이름 -->
+                <!-- 회원 이름을 LoginMember에서 가져오기 -->
                      <% if(LoginMember == null){ %>
                     	
                     		
@@ -98,15 +96,13 @@
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
                         
-                        <!-- 치안센터/cctv/비상벨 버튼 -->
+                        <!-- 안전시설 서비스 -->
+                        <!-- 치안센터/cctv/비상벨/초기화 버튼 -->
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-black2 mb-4" style="background-color: whitesmoke !important;">
                                     <div class="card-body">안전시설 서비스</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between" style="height: 80px;">
-                                        <!-- <input id="text-balck" class="service-checkbox" type="checkbox" name="service" value="center"> 치안센터
-                                        <input id="text-balck" class="service-checkbox" type="checkbox" name="service" value="cctv"> CCTV
-                                        <input id="text-balck" class="service-checkbox" type="checkbox" name="service" value="bell"> 비상벨 -->
                                         <button id="cctv_click" onclick="center_view()" style="transition: all 0.3s ease; border: 3px solid blue; border-radius: 5px; margin-left: 30px;" onmouseover="this.style.boxShadow='-7px -7px 20px 0px #fff9,-4px -4px 5px 0px #fff9,7px 7px 20px 0px #0002,4px 4px 5px 0px #0001'" onmouseout="this.style.boxShadow='none'">치안센터</button>
                                         <button id="cctv_click" onclick="cctv_view()" style="transition: all 0.3s ease; border: 3px solid green; border-radius: 5px;" onmouseover="this.style.boxShadow='-7px -7px 20px 0px #fff9,-4px -4px 5px 0px #fff9,7px 7px 20px 0px #0002,4px 4px 5px 0px #0001'" onmouseout="this.style.boxShadow='none'">CCTV</button>
                                         <button id="cctv_click" onclick="bell_view()" style="transition: all 0.3s ease; border: 3px solid hotpink; border-radius: 5px;" onmouseover="this.style.boxShadow='-7px -7px 20px 0px #fff9,-4px -4px 5px 0px #fff9,7px 7px 20px 0px #0002,4px 4px 5px 0px #0001'" onmouseout="this.style.boxShadow='none'">비상벨</button>
@@ -183,7 +179,7 @@
                             </div>
                         </div>
                         
-                        <!-- 서울시 전체 지도 -->
+                        <!-- 서울시 전체 지도/행정구 지도 -->
                         <div class="row">
                             <div class="col-xl-6">
                                 <div class="card mb-4">
@@ -197,7 +193,7 @@
                                 </div>
                             </div>
                             
-                            <!-- 서울시 대시보드 -->
+                            <!-- 서울시 대시보드/행정구 대시보드 -->
                            <div class="col-xl-6">
                                 <div class="card mb-4">
                                     <div class="card-header">
@@ -235,6 +231,7 @@
 		var CCTV_marker;
 		var Bell_marker;
 		
+			/* 치안센터 */
 			function center_view() {
 				$.ajax({
 					url: "LoadPoliceData",
@@ -260,6 +257,7 @@
 				})
 			}
 
+			/* cctv */
       		function cctv_view() {
       			$.ajax({
 		            url: "LoadCCTVData",
@@ -285,6 +283,7 @@
 		         })
       		}
 
+			/* 비상벨 */
 	   		function bell_view() {
 	   			$.ajax({
 	   				url: "LoadBellData",
@@ -309,28 +308,6 @@
 	   				}
 	   			})
 	   		}
-   		
-   		<!-- 지우기 기능 -->
-   	/* 	function remove_view() {
-			console.log(PoliceOffice_marker);
-   			if (PoliceOffice_marker) {
-   		        
-   				for (var i = 0; i < PoliceOffice_marker.length; i++) {
-   					PoliceOffice_marker[i]
-				}
-   				PoliceOffice_marker.remove();
-   				// PoliceOffice_marker.remove();  // Remove police marker
-   		    }
-
-   		    if (CCTV_marker) {
-   		        CCTV_marker.remove();  // Remove CCTV marker
-   		    }
-
-   		    if (Bell_marker) {
-   		        Bell_marker.remove();  // Remove bell marker
-   		    }
-   		} */
-		</script>
 
 		<!-- 지도 시작위치, 시작줌레벨 -->
         <script type="text/javascript">
@@ -347,20 +324,6 @@
     	<!-- 폴리곤을 클릭했을때 동작할 행동을 넣어줌 -->
    		<script src="AreaClick.js"></script>
    		
-   		<!-- 행정구 대시보드 -->
-		<!-- <script src="dashboard/gu_dashboard.js"></script> -->
-			
-		<!-- 서울시 대시보드 -->
-        <!-- <script src="dashboard/seoul_dashboard.js"></script> -->
-    	<!-- CCTV위치포인트표시 -->
-		<!-- <script src="mapApi/CCTV.js"></script> -->
-		
- 		<!-- 경찰서위치포인트표시 -->
-	 	<<!-- script src="mapApi/PoliceOffice.js"></script> -->
-	 	
-		<!-- 안전벨위치포인트표시 -->
-		<!-- <script src="mapApi/Bell.js"></script> -->
-		
 		<!-- iframe을 활용한 대시보드 -->
 		<script>
 		// 초기에는 첫 번째 차트만 보이도록 설정(서울시 전체)
