@@ -91,7 +91,7 @@
                                                 </div>
                                             </div>
                                             
-                                            <!-- 버튼 입력 -->
+                                            <!-- 회원가입 버튼 -->
                                             <div class="mt-4 mb-0">
                                                 <div class="d-grid">
                                                 <input type="submit" value="회원가입" class="btn btn-primary btn-block">
@@ -102,7 +102,7 @@
                                         
                                     </div>
                                     
-                                    <!-- 회원가입 있으면 로그인 -->
+                                    <!-- 회원가입 되어있으면 로그인 -->
                                     <div class="card-footer text-center py-3">
                                         <div class="small"><a href="Login.jsp">회원가입이 되어있다면 로그인!</a></div>
                                     </div>

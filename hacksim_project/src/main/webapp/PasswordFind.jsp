@@ -64,7 +64,7 @@
                                         <!-- form 끝 -->
                                     </div>
                                     
-                                    <!-- 회원가입 클릭 -->
+                                    <!-- 회원가입 필요하면 클릭 -->
                                     <div class="card-footer text-center py-3">
                                         <div class="small"><a href="Join.jsp">회원가입이 필요하시면 클릭!</a></div>
                                     </div>
