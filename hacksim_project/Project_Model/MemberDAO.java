@@ -80,41 +80,6 @@ public class MemberDAO {
 		
 		return FindPw;
 	}
-	
-	// 아이디 중복 확인
-	public boolean IdCheck(String inputId) {
-		
-		boolean checkId = false;
-		
-		try {
-			
-			checkId = sqlSession.selectOne("Project_Database.MemberMapper.IdCheck", inputId);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			sqlSession.close();
-		}
-		return checkId;
-		
-	}
-
-	// 이메일 중복 확인
-	public boolean emailCheck(String inputE) {
-		
-		boolean checkE = false;
-		
-		try {
-			
-			checkE = sqlSession.selectOne("Project_Database.MemberMapper.emailCheck", inputE);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			sqlSession.close();
-		}
-		return checkE;
-	}
 
 	// 회원탈퇴
 	public int DeleteMember(String id) {
