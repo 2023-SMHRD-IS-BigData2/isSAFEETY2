@@ -15,13 +15,13 @@ function fetchDataAndDrawChart(selectedLocation) {
         url: "http://119.200.31.33:5000/pre",
         data: selectedLocation,
         success: function(data) {
-            console.log(data);
+          
             var predict_data = data["predict_data"];
             var gu_crime_cnt=data["gu_crime_cnt"];
             var gu_popBy_cnt=data["gu_popBy_cnt"];
             var gu_PolBy_cnt=data["gu_PolBy_cnt"];
             updateChart(predict_data,gu_crime_cnt,gu_popBy_cnt,gu_PolBy_cnt);
-            console.log(predict_data);
+            
         },
         error: function(e) {
             console.log("error", e);

@@ -110,20 +110,19 @@ var myHouseChart = new Chart(ctxH, {
 	}
 });
 
-//ajax로 데이터 받아와서 차트 업데이트
+//ajax로 flask 서버에서 넘어온 데이터 받아와서 차트 업데이트
 function fetchDataAndDrawChart() {
 	//let form = $('#testFile')[0]; //form태그로 데이터 전송 시
 	//let data = new FormData(form);
-	let data = '종로구'; //flask에 구 이름 보내기-> 구별 데이터로 받아오기 
+	let data = getLocationFromURL(); //flask에 구 이름 보내기-> 구별 데이터로 받아오기 
 	$.ajax({
 		type: "POST",
-		url: "http://127.0.0.1:5003/gu_dashboard", // flask server
+		url: "http://119.200.31.33:5000/gu_dashboard", // flask server 접속 Ip 주소
 		//data: JSON.stringfy(postdata),
 		data: data,
 		processData: false,
 		contentType: false,
 		success: function(data) {
-			console.log(data);
 			var pop_label = data["pop_label"]; //성공 시 flask에서 x값 받기
 			var pop_cnt = data["pop_cnt"]; //성공 시 flask에서 y값 받기
 			var business_name = data["business_name"]; //성공 시 flask에서 업태구분명 받기
